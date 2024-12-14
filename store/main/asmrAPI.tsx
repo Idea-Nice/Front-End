@@ -80,7 +80,7 @@ export const asmrOwnedAPI = createAsyncThunk(
 
 export const asmrPurchaseAPI = createAsyncThunk(
     '/asmr/purchase',
-    async (purchaseDTO: { userId: string; asmrFileName: string; }, { rejectWithValue }) => {
+    async (purchaseDTO: { userId: string;  asmrName: string; }, { rejectWithValue }) => {
         try {
             const response = await axiosInstance(token!).post(`/asmr/purchase`, purchaseDTO);
             return response.data;

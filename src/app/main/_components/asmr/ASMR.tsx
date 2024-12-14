@@ -4,8 +4,10 @@ import React from 'react';
 import styles from '../../../../../styles/main/asmr.module.css';
 import { ASMRProps, Asmr } from '../../_interface/MainInterface';
 import Headers from '../Header';
-import ImageItem from '../ImageItem';
+import ImageItem from './ImageItem';
 import { useBackgroundData } from './useAsmrData';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock, faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 
 const ASMR: React.FC<ASMRProps> = ({ playAudio, stopAudio, currentAsmr, isModalOpen, closeModal }) => {
 
@@ -40,14 +42,13 @@ const ASMR: React.FC<ASMRProps> = ({ playAudio, stopAudio, currentAsmr, isModalO
                                         key={asmr.id}
                                         id={asmr.id}
                                         name={asmr.name}
-                                        fileName={asmr.imageFileName}
                                         imageUrl={asmr.imageUrl}
                                         isLocked={isLocked}
-                                        isWho="ASMR"
                                         onPlay={() => handleAudioPlay(asmr)}
                                         isActive={isActive}
-                                        lockIcon={<span>🔒</span>}
-                                        actionIcon={isActive ? <span>▶</span> : <span>⏸</span>}
+                                        lockIcon={<FontAwesomeIcon icon={faLock} />}
+                                        actionIcon={isActive ? <span><FontAwesomeIcon icon={faPlay}/></span> : <span><FontAwesomeIcon icon={faStop}/></span>}
+                                        closeModal={closeModal}
                                     />
                                 )
                             })}

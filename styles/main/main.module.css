@@ -1,11 +1,12 @@
 .backgroundImage {
     position: relative;
     z-index: -1;
+    width: 100vw;
     height: 100vh;
-    background-image: url('../../public/imgs/backgrounds/mainBackground.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .mypage {

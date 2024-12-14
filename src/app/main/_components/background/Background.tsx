@@ -8,22 +8,26 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../../../store/store';
 import { backgroundSetCurrentAPI } from '../../../../../store/main/backgrounAPI';
 import { useBackgroundData } from './useBackgroundData';
-import ImageItem from '../ImageItem';
+import ImageItem from './ImageItem';
+import { response } from '../../../../../util/response';
+import { error } from '../../../../../util/error';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 const Background: React.FC<ModalProps> = ({ isModalOpen, closeModal }) => {
 
     const dispatch = useDispatch<AppDispatch>();
     const { backgroundImgs, userBackgroundImgs } = useBackgroundData(isModalOpen);
 
-    const saveBackground = (background_id: string) => {
-        dispatch(backgroundSetCurrentAPI(background_id))
+    const saveBackground = (saveDTO: { userId: string, backgroundName: string }) => {
+        dispatch(backgroundSetCurrentAPI(saveDTO))
             .unwrap()
-            .then((response) => {
-                console.log(response);
+            .then(async (result) => {
+                await response(result);
                 window.location.reload();
             })
-            .catch((error) => {
-                console.log(error);
+            .catch((err) => {
+                error(err);
             })
     };
 
@@ -45,12 +49,12 @@ const Background: React.FC<ModalProps> = ({ isModalOpen, closeModal }) => {
                                     <ImageItem
                                         key={background.id}
                                         id={background.id}
-                                        name={background.fileName}
-                                        fileName={background.fileName}
+                                        name={background.name}
                                         imageUrl={background.url}
                                         isLocked={isLocked}
-                                        isWho="BACKGROUND"
-                                        onPlay={saveBackground}
+                                        lockIcon={<FontAwesomeIcon icon={faLock} />}
+                                        onSave={saveBackground}
+                                        closeModal={closeModal}
                                     />
                                 )
                             })}

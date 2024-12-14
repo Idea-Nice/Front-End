@@ -109,10 +109,14 @@ export const backgroundOwnedAPI = createAsyncThunk(
 );
 
 export const backgroundSetCurrentAPI = createAsyncThunk(
-    '/background/set-current/{backgroundId}',
-    async (backgroundId: string) => {
-        const response = await axiosInstance(token!).post(`/background/set-current/${backgroundId}`);
-        return response.data;
+    '/background/set-current',
+    async (saveDTO: { userId: string, backgroundName: string }, { rejectWithValue }) => {
+        try{
+            const response = await axiosInstance(token!).post(`/background/set-current`, saveDTO);
+            return response.data;
+        }catch(error: any){
+            return rejectWithValue(error.response?.data || { message: "알 수 없는 오류가 발생했습니다.", status: 500 });
+        }
     }
 );
 
@@ -126,7 +130,7 @@ export const backgroundGetCurrentAPI = createAsyncThunk(
 
 export const backgroundPurchaseAPI = createAsyncThunk(
     '/background/purchase',
-    async (purchaseDTO: { userId: string; backgroundId: string; }, { rejectWithValue }) => {
+    async (purchaseDTO: { userId: string; backgroundName: string; }, { rejectWithValue }) => {
         try {
             const response = await axiosInstance(token!).post(`/background/purchase`, purchaseDTO);
             return response.data;
