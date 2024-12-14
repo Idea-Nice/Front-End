@@ -12,7 +12,7 @@ import { alertTitle } from '../../../../../util/alert';
 import { response } from '../../../../../util/response';
 import { error } from '../../../../../util/error';
 
-const AddSchedule: React.FC<AddScheduleProps> = ({ setIsAddingSchedule }) => {
+const AddSchedule: React.FC<AddScheduleProps> = ({ setIsAddingSchedule, myDate, setMyDate }) => {
 
     const dispatch = useDispatch<AppDispatch>();
     const userId = window.localStorage.getItem('userId');
@@ -57,7 +57,7 @@ const AddSchedule: React.FC<AddScheduleProps> = ({ setIsAddingSchedule }) => {
             .unwrap()
             .then((result) => {
                 response(result);
-                dispatch(getCalendarAPI(userId!))
+                setMyDate(result);
                 if (titleElement) titleElement.value = '';
                 setStartDate(null);
                 setEndDate(null);

@@ -57,7 +57,7 @@ const TodoList: React.FC<ModalProps> = ({ isModalOpen, closeModal }) => {
 
     const onRemove = useCallback((id: string) => {
         Swal.fire({
-            text: "일정을 삭제하시겠습니까?",
+            text: "리스트를 삭제하시겠습니까?",
             showCancelButton: true,
             confirmButtonText: "네",
             cancelButtonText: "아뇨"

@@ -12,6 +12,7 @@ import { AppDispatch } from '../../../store/store';
 import Mypage from './_components/mypage/Mypage';
 import { useRouter } from 'next/navigation';
 import { Asmr } from './_interface/MainInterface';
+import { alertTitle } from '../../../util/alert';
 
 type ModalType = "asmr" | "background" | "calendar" | "todo" | "mypage" | null;
 
@@ -34,7 +35,10 @@ export default function Main() {
                 setBackgroundImage(response.url);
             })
             .catch((error) => {
-                console.log(error);
+                if(error.code === "ERR_BAD_REQUEST"){
+                    alertTitle("권한이 없습니다.");
+                    router.push('/login');
+                }
             })
     }, [])
 

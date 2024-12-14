@@ -10,11 +10,10 @@ import Swal from 'sweetalert2';
 import { response } from '../../../../../util/response';
 import { error } from '../../../../../util/error';
 
-const CheckSchedule: React.FC<CheckScheduleProps> = ({ setIsViewingSchedule }) => {
+const CheckSchedule: React.FC<CheckScheduleProps> = ({ setIsViewingSchedule, myDate, setMyDate }) => {
 
     const dispatch = useDispatch<AppDispatch>();
     const userId = window.localStorage.getItem('userId');
-    const [myDate, setMyDate] = useState<Schedule[]>([]);
 
     const selectSchedule = () => {
         dispatch(getCalendarAPI(userId!))
@@ -27,7 +26,7 @@ const CheckSchedule: React.FC<CheckScheduleProps> = ({ setIsViewingSchedule }) =
 
     useEffect(() => {
         selectSchedule();
-    }, [setIsViewingSchedule, dispatch(getCalendarAPI(userId!))])
+    }, [setIsViewingSchedule, myDate])
 
     const formatDateToString = (dateString: string) => {
         const date = new Date(dateString);
@@ -48,8 +47,8 @@ const CheckSchedule: React.FC<CheckScheduleProps> = ({ setIsViewingSchedule }) =
                 dispatch(deleteCalendarAPI(id))
                     .unwrap()
                     .then((result) => {
-                        setMyDate((prev) => prev.filter(schedule => schedule.id !== id));
                         response(result);
+                        setMyDate((prev) => prev.filter(schedule => schedule.id !== id));
                     })
                     .catch((err) => {
                         error(err);

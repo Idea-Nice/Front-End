@@ -39,10 +39,12 @@ const ASMR: React.FC<ASMRProps> = ({ playAudio, stopAudio, currentAsmr, isModalO
                                     <ImageItem
                                         key={asmr.id}
                                         id={asmr.id}
-                                        fileName={asmr.name}
+                                        name={asmr.name}
+                                        fileName={asmr.imageFileName}
                                         imageUrl={asmr.imageUrl}
                                         isLocked={isLocked}
-                                        onSave={() => handleAudioPlay(asmr)}
+                                        isWho="ASMR"
+                                        onPlay={() => handleAudioPlay(asmr)}
                                         isActive={isActive}
                                         lockIcon={<span>🔒</span>}
                                         actionIcon={isActive ? <span>▶</span> : <span>⏸</span>}

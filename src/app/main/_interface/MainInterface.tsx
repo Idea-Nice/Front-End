@@ -32,21 +32,23 @@ export interface BackGround {
 export interface BackgroundImageItemProps {
     background: BackGround;
     isLocked: boolean;
-    onSave: (backgroundId: string) => void;
+    onPlay: (backgroundId: string) => void;
 }
 
 export interface AsmrImageItemProps {
     background: Asmr;
     isLocked: boolean;
-    onSave: (backgroundId: string) => void;
+    onPlay: (backgroundId: string) => void;
 }
 
 export interface ImageItemProps {
     id: string;
+    name: string;
     fileName: string;
     imageUrl: string;
     isLocked: boolean;
-    onSave: (id: string) => void;
+    isWho: string;
+    onPlay: (id: string) => void;
     isActive?: boolean | null;
     lockIcon?: React.ReactNode;
     actionIcon?: React.ReactNode;
@@ -62,10 +64,14 @@ export interface Schedule {
 
 export interface AddScheduleProps {
     setIsAddingSchedule: React.Dispatch<React.SetStateAction<boolean>>;
+    myDate: Schedule[];
+    setMyDate: React.Dispatch<React.SetStateAction<Schedule[]>>;
 }
 
 export interface CheckScheduleProps {
     setIsViewingSchedule: React.Dispatch<React.SetStateAction<boolean>>;
+    myDate: Schedule[];
+    setMyDate: React.Dispatch<React.SetStateAction<Schedule[]>>;
 }
 
 export interface Todo {

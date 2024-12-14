@@ -11,9 +11,12 @@ import { backgroundGetCurrentAPI } from '../../../store/main/backgrounAPI';
 import AiInput from './_components/AiInput';
 import Headers from './_components/Header';
 import Category from './_components/Category';
+import { useRouter } from 'next/navigation';
+import { alertTitle } from '../../../util/alert';
 
 export default function Music() {
 
+    const router = useRouter();
     const dispatch = useDispatch<AppDispatch>();
     const userId = window.localStorage.getItem('userId');
 
@@ -28,7 +31,10 @@ export default function Music() {
                 setBackgroundImage(response.url);
             })
             .catch((error) => {
-                console.log(error);
+                if (error.code === "ERR_BAD_REQUEST") {
+                    alertTitle("권한이 없습니다.");
+                    router.push('/login');
+                }
             })
     }, [])
 
@@ -41,7 +47,7 @@ export default function Music() {
         <>
             <div
                 className={styles.backgroundImage}
-            style={{ backgroundImage: `url(${backgroundImage})` }}
+                style={{ backgroundImage: `url(${backgroundImage})` }}
             ></div>
             <div className={styles.main_div}>
                 <Headers />

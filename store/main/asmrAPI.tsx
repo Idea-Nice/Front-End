@@ -80,9 +80,13 @@ export const asmrOwnedAPI = createAsyncThunk(
 
 export const asmrPurchaseAPI = createAsyncThunk(
     '/asmr/purchase',
-    async (purchaseDTO: { userId: string; asmrFileName: string; }) => {
-        const response = await axiosInstance(token!).post(`/asmr/purchase`, purchaseDTO);
-        return response.data;
+    async (purchaseDTO: { userId: string; asmrFileName: string; }, { rejectWithValue }) => {
+        try {
+            const response = await axiosInstance(token!).post(`/asmr/purchase`, purchaseDTO);
+            return response.data;
+        } catch (error: any) {
+            return rejectWithValue(error.response?.data || { message: "알 수 없는 오류가 발생했습니다.", status: 500 });
+        }
     }
 );
 

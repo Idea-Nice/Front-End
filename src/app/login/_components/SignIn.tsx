@@ -7,8 +7,8 @@ import { toggleIsSign } from '../../../../store/sign/signSwitch';
 import styles from '../../../../styles/login/signIn.module.css';
 import { signInAPI } from '../../../../store/sign/signAPI';
 import { useRouter } from 'next/navigation';
-import { response } from '../../../../util/response';
 import { error } from '../../../../util/error';
+import { alertTitle } from '../../../../util/alert';
 
 export default function SignIn() {
 
@@ -24,15 +24,22 @@ export default function SignIn() {
 
 
     const signIn = () => {
-        dispatch(signInAPI({ userId: idValue, userPw: pwValue }))
-            .unwrap()
-            .then((result) => {
-                window.localStorage.setItem('userId', result.userId)
-                window.localStorage.setItem('token', result.authorization)
-            })
-            .catch((err) => {
-                error(err);
-            })
+        if (!idValue) {
+            alertTitle("아이디를 입력하세요");
+        } else if (!pwValue) {
+            alertTitle("비밀번호를 입력하세요");
+        } else {
+            dispatch(signInAPI({ userId: idValue, userPw: pwValue }))
+                .unwrap()
+                .then((result) => {
+                    window.localStorage.setItem('userId', result.userId);
+                    window.localStorage.setItem('token', result.authorization);
+                    alertTitle("로그인 성공");
+                })
+                .catch((err) => {
+                    error(err);
+                })
+        }
     }
 
     return (

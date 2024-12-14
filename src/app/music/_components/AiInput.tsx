@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import styles from '../../../../styles/music/music.module.css';
 import { AppDispatch } from '../../../../store/store';
 import { useState } from 'react';
-import { addListByAiAPI } from '../../../../store/music/musicAPI';
+import { addListByAiAPI, getUserListAPI } from '../../../../store/music/musicAPI';
 import { response } from '../../../../util/response';
 import { error } from '../../../../util/error';
 import { alertTitle } from '../../../../util/alert';
@@ -29,6 +29,7 @@ export default function AiInput() {
                 .then((result) => {
                     response(result);
                     setKeywordOrGenre('');
+                    dispatch(getUserListAPI(userId!));
                 })
                 .catch(err => {
                     error(err);

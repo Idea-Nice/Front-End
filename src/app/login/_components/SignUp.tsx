@@ -45,6 +45,8 @@ export default function SignUp() {
                     }).then(click => {
                         if (click.isConfirmed) {
                             setClearId(true);
+                        }else{
+                            setClearId(false);
                         }
                     })
                 })
