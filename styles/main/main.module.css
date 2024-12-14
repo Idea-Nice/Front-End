@@ -1,0 +1,93 @@
+.backgroundImage {
+    position: relative;
+    z-index: -1;
+    height: 100vh;
+    background-image: url('../../public/imgs/backgrounds/mainBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mypage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    position: fixed;
+    top: 65px;
+    left: 90px;
+    background-color: #9DC4FF;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: url('../../public/imgs/icons/유저.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+}
+
+.music_bar {
+    width: 25%;
+    height: 15%;
+    position: fixed;
+    left: 38%;
+    bottom: 80px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-image: url('../../public/imgs/Logo.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.music_bar:hover{
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+}
+
+.nav {
+    position: fixed;
+    bottom: 60px;
+    right: 80px;
+    width: 20%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 0;
+}
+
+.asmr,
+.calendar,
+.todolist,
+.background {
+    width: 55px;
+    height: 55px;
+    background-color: #9DC4FF;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.asmr {
+    background-image: url('../../public/imgs/icons/백색소음.png');
+}
+
+.calendar {
+    background-image: url('../../public/imgs/icons/캘린더.png');
+}
+
+.todolist {
+    background-size: 45px;
+    background-image: url('../../public/imgs/icons/투두리스트.png');
+}
+
+.background {
+    background-size: 40px;
+    background-image: url('../../public/imgs/icons/배경화면.png');
+}

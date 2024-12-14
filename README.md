@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# 프로젝트 주제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+IT 기술을 활용하여 현대인의 건강 (wellness) 문제를 해결할 수 있는 웹사이트 구축 
+<br/> -> 컴퓨터를 주로 하는 사람들의 삶의 질을 올려줄 수 있는 힐링 비서
 
-## Available Scripts
+# 제작 기간
+2024.07.05 ~ 2024.08.06
 
-In the project directory, you can run:
+# 참여 인원
+프론트엔드 - 3명
+<br/>
+백엔드 - 2명
 
-### `npm start`
+# 사용한 기술 (기술 스택)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+프론트엔드 - HTML , CSS , JS , REACT
+<br/>
+백엔드 - SPRINGBOOT , SPRINGSECURITY , MYSQL
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 핵심 기능
 
-### `npm test`
+- 회원
+- 배경화면
+- 배경음악
+- ASMR 기능
+- 캘린더 기능
+- TODOLIST 기능
+- 유튜브 API를 활용한 음악 플레이어
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
+<br/>
+<br/>
 
-### `npm run build`
+## ※ 완성은 했으나 더 좋은 프로젝트로 완성시키기 위해 리팩토링 진행
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 제작 기간
+2024.07.05 ~ 2024.08.06
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 참여 인원
+프론트엔드 - 1명
+<br/>
+백엔드 - 2명
 
-### `npm run eject`
+# 사용한 기술 (기술 스택)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+프론트엔드 - HTML , CSS , JS , REACT , REDUX , TS , Next.js
+<br/>
+백엔드 - SPRINGBOOT , SPRINGSECURITY , MYSQL
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 핵심 기능
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 회원
+- 배경화면 전환
+- ASMR 기능
+- 캘린더 기능
+- TODOLIST 기능
+- 유튜브 API를 활용한 음악 플레이어
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 리팩토링 시 보완할 점
 
-## Learn More
+- 패키지 구조 나누기
+- REDUX를 활용한 상태 관리
+- TS , Next.js 도입하기
+- Git Convention 도입하기
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Git Convention
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 포맷
 
-### Code Splitting
+```
+type: subject
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+body
+```
 
-### Analyzing the Bundle Size
+#### type
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 하나의 커밋에 여러 타입이 존재하는 경우 상위 우선순위의 타입을 사용한다.
+- fix: 버스 픽스
+- feat: 새로운 기능 추가
+- refactor: 리팩토링 (버그픽스나 기능추가없는 코드변화)
+- docs: 문서만 변경
+- style: 코드의 의미가 변경 안 되는 경우 (띄어쓰기, 포맷팅, 줄바꿈 등)
+- test: 테스트코드 추가/수정
+- chore: 빌드 테스트 업데이트, 패키지 매니저를 설정하는 경우 (프로덕션 코드 변경 X)
 
-### Making a Progressive Web App
+#### subject
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- 제목은 50글자를 넘지 않도록 한다.
+- 개조식 구문 사용
+    - 중요하고 핵심적인 요소만 간추려서 (항목별로 나열하듯이) 표현
+- 마지막에 특수문자를 넣지 않는다. (마침표, 느낌표, 물음표 등)
 
-### Advanced Configuration
+#### body (optional)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 각 라인별로 balled list로 표시한다.
+    - 예시) - AA
+- 가능하면 한줄당 72자를 넘지 않도록 한다.
+- 본문의 양에 구애받지 않고 최대한 상세히 작성
+- “어떻게” 보다는 “무엇을" “왜” 변경했는지 설명한다.

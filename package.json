@@ -1,62 +1,36 @@
 {
-  "name": "hackathon",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@fortawesome/fontawesome-svg-core": "^6.6.0",
-    "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-regular-svg-icons": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.2",
-    "classnames": "^2.5.1",
-    "date-fns": "^3.6.0",
-    "react": "^18.3.1",
-    "react-calendar": "^5.0.0",
-    "react-datepicker": "^7.3.0",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1",
-    "react-live-clock": "^6.1.23-beta",
-    "react-modal": "^3.16.1",
-    "react-player": "^2.16.0",
-    "react-router-dom": "^6.25.1",
-    "react-scripts": "^5.0.1",
-    "react-transition-group": "^4.4.5",
-    "react-virtualized": "^9.22.5",
-    "react-youtube": "^10.1.0",
-    "styled-components": "^6.1.12",
-    "swal": "^0.1.0",
-    "sweetalert2": "^11.12.3",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@reduxjs/toolkit": "^2.3.0",
+    "next": "15.0.2",
+    "node": "^23.2.0",
+    "react": "19.0.0-rc-02c0e824-20241028",
+    "react-calendar": "^5.1.0",
+    "react-datepicker": "^7.5.0",
+    "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "react-player": "^2.16.0",
+    "react-redux": "^9.1.2",
+    "sweetalert2": "^11.14.5"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/axios": "^0.14.4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.2",
+    "typescript": "^5"
   },
-  "proxy": "http://13.124.95.115/:8080"
+  "proxy": "http://localhost/:8080"
 }

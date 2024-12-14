@@ -1,0 +1,95 @@
+.main_div {
+    width: 550px;
+    height: 600px;
+    z-index: 0;
+    position: fixed;
+    top: 42%;
+    left: 50.5%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    background-color: #29293E;
+    border: none;
+    overflow: auto;
+    padding: 0;
+}
+
+.out_div {
+    width: 100%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: default;
+}
+
+.title {
+    width: 20%;
+    text-align: center;
+    background-color: #8EBBFF;
+    border-radius: 5px;
+    padding: 3px 10px 3px 10px;
+}
+
+.img_div {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 10px 20px;
+}
+
+.img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+    border: solid 1px white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    transition: filter 0.3s ease;
+    z-index: -1;
+}
+
+.img::after {
+    content: attr(title);
+    color: tomato;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.img:hover::after {
+    opacity: 1;
+}
+
+.modal_out {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.lock {
+    position: fixed;
+    z-index: 0;
+}

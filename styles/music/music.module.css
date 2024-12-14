@@ -1,0 +1,215 @@
+.backgroundImage {
+    height: 100vh;
+    background-image: url('../../public/imgs/backgrounds/mainBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.out_div {
+    position: fixed;
+    width: 10%;
+    height: 12%;
+    left: 27%;
+    top: 15px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-image: url('../../public/imgs/Logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.out_div:hover,
+.category_div:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+}
+
+.category_div {
+    position: fixed;
+    width: 5%;
+    height: 5.5%;
+    right: 30.5%;
+    top: 70px;
+    border-radius: 20px;
+    color: #29293E;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lofi_div,
+.piano_div {
+    position: fixed;
+    width: 5%;
+    height: 5.5%;
+    top: 70px;
+    border-radius: 20px;
+    color: #29293E;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+.lofi_div {
+    right: 36%;
+}
+
+.piano_div {
+    right: 41.5%;
+}
+
+.main_div {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.player {
+    width: 870px;
+    height: 550px;
+    background-color: #29293E;
+    margin-top: 5%;
+    border-radius: 1rem;
+    padding: 10px;
+}
+
+.ai_input_div {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background-color: #ffaec8;
+    border-radius: 1rem;
+    margin-top: 5%;
+}
+
+.ai_input_div p {
+    color: #29293E;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.ai_input_form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.ai_input_div input {
+    width: 80%;
+    height: 50%;
+    border: none;
+    outline: none;
+    font-size: large;
+}
+
+.ai_input_div button {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    font-size: large;
+    background-color: #ffaec8;
+    transition: all 0.3s ease;
+}
+
+.ai_input_div button:hover {
+    color: #9c88ff;
+    transition: all 0.3s ease;
+}
+
+.list_top {
+    width: 20vw;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #29293E;
+    border-radius: 1rem;
+    margin-bottom: 2%;
+}
+
+.list_top input {
+    width: 70%;
+    height: 80%;
+    background-color: #29293E;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.list_top button {
+    width: 15%;
+    height: 75%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.list_div {
+    width: 384px;
+    height: 756px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #29293E;
+    color: white;
+    border-radius: 1rem;
+    cursor: default;
+    overflow: scroll;
+}
+
+.list_div::-webkit-scrollbar{
+    width: 0;
+}
+
+.prop_div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.list_url {
+    width: 96px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.title_div {
+    width: 50%;
+}
+
+.trash,
+.plus {
+    width: 10%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.trash:hover,
+.plus:hover {
+    color: #ffaec8;
+    transition: all 0.3s ease;
+}
